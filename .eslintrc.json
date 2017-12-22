@@ -1,0 +1,21 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "comma-dangle": ["error", {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+    }],
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": ["off", "allow"],
+    "no-param-reassign": "off",
+    "import/extensions": ["error", { "js": "never", "jsx": "always" }],
+    "class-methods-use-this": "off",
+    "global-require": "off"
+  },
+  "env": {
+    "browser": 1
+  }
+}
