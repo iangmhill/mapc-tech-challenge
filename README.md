@@ -34,3 +34,8 @@ In order to attempt to create this application in 4 hours or so, I made several 
 - I can assume a relatively small number of data points (thousands, not millions). If I were actually handling millions of data points, I would have to aggregate them before sending them to the client.
 - I can use open source npm packages to abstract the Google Maps API into React components.
 - I don't need to worry about gzip or compression for size-optimized production code.
+
+## Design decisions (Work in progress)
+- CSS naming scheme and using SASS - CSS can get really complicated quickly
+- Proptypes
+- File structure
