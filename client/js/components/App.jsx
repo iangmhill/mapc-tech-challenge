@@ -26,7 +26,10 @@ class App extends React.Component {
           <Route
             exact
             path={'/results'}
-            component={ResultsPage}
+            render={() => {
+              this.props.onResultsEnter();
+              return (<ResultsPage />);
+            }}
           />
           <Redirect to={'/'} />
         </Switch>

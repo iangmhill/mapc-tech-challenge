@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ResultsMapContainer from './../containers/ResultsMapContainer.jsx';
+
 import './../../sass/ResultsPage.scss';
 
 class ResultsPage extends React.Component {
@@ -11,7 +13,7 @@ class ResultsPage extends React.Component {
   render() {
     return (
       <div className="resultspage-component">
-        This is the results page
+        <ResultsMapContainer />
       </div>
     )
   }

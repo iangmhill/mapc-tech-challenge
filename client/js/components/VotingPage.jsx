@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import VotingFormContainer from './../containers/VotingFormContainer.jsx';
+
 import './../../sass/VotingPage.scss';
 
 class VotingPage extends React.Component {
@@ -11,7 +13,7 @@ class VotingPage extends React.Component {
   render() {
     return (
       <div className="votingpage-component">
-        This is the voting page
+        <VotingFormContainer />
       </div>
     )
   }

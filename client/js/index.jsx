@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 
-import App from './components/App.jsx';
+import AppContainer from './containers/AppContainer.jsx';
 import configureStore from './store';
 
 import './../sass/index.scss';
@@ -18,7 +18,7 @@ ReactDom.render(
     <ConnectedRouter history={history}>
       <Switch>
         <Route
-          component={App}
+          component={AppContainer}
         />
       </Switch>
     </ConnectedRouter>
