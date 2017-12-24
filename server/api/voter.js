@@ -6,6 +6,11 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
   const voterData = req.body;
+  if (!voterData.address || !voterData.location || !voterData.location.lng ||
+      !voterData.location.lat ||
+      typeof (voterData.supportsCandidate) === 'undefined') {
+    return res.json({ success: false });
+  }
   // PostGIS accepts coordinates in the order [longitude, latitude]
   const point = {
     type: 'Point',
