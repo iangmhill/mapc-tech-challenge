@@ -24,7 +24,6 @@ module.exports = {
       disable: true,
       allChunks: true,
     }),
-    new webpack.ContextReplacementPlugin(/moment\/locale$/, /^\.\/(en)$/),
   ],
 
   module: {
@@ -33,9 +32,6 @@ module.exports = {
       loader: 'babel-loader',
       exclude: /node_modules/,
       include: [`${__dirname}/client`],
-      query: {
-        presets: ['react-hmre'],
-      },
     }, {
       test: /\.scss$/,
       include: `${__dirname}/client/sass`,
@@ -44,6 +40,16 @@ module.exports = {
         use: ['css-loader', 'sass-loader'],
       }),
       exclude: /node_modules/,
+    }, {
+      test: /\.(png|jpg|gif)$/,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+          },
+        },
+      ],
     }],
   },
 };

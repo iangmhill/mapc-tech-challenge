@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect } from 'react-router';
 
+import Header from './Header.jsx';
+import ResultsPage from './ResultsPage.jsx';
+import VotingPage from './VotingPage.jsx';
+
 import './../../sass/App.scss';
 
 class App extends React.Component {
@@ -11,7 +15,24 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app-layout">
+      <div className="app-component">
+        <Header />
+        <Switch>
+          <Route
+            exact
+            path={'/'}
+            component={VotingPage}
+          />
+          <Route
+            exact
+            path={'/results'}
+            render={() => {
+              this.props.onResultsEnter();
+              return (<ResultsPage />);
+            }}
+          />
+          <Redirect to={'/'} />
+        </Switch>
       </div>
     )
   }

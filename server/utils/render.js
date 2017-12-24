@@ -18,11 +18,13 @@ export default function (initialState) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"
         >
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&libraries=places"></script>
       </head>
       <body>
         <div id="root"></div>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
+          window.__GOOGLE_API_KEY__ = "${process.env.GOOGLE_API_KEY}";
         </script>
         <script src="/build/bundle.js"></script>
       </body>
