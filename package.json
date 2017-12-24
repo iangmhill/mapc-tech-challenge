@@ -3,10 +3,6 @@
   "version": "0.0.1",
   "description": "A mini web application for collecting and exploring voter geographic and polling data.",
   "main": "index.js",
-  "engines": {
-    "node": "8.1.4",
-    "npm": "5.3.0"
-  },
   "scripts": {
     "build": "webpack -p --config ./webpack.prod.config.js --progress",
     "dev": "BABEL_DISABLE_CACHE=1 NODE_ENV=development DEBUG=warn nodemon index.js",
@@ -40,6 +36,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "google-maps-react": "^1.1.2",
     "history": "^4.6.3",
     "isomorphic-fetch": "^2.2.1",
     "morgan": "^1.7.0",
@@ -50,6 +47,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.4.2",
     "react-ga": "^2.3.5",
+    "react-places-autocomplete": "^5.4.3",
     "react-redux": "^5.0.2",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.2.2",
@@ -62,6 +60,7 @@
     "sequelize": "^4.8.4",
     "sequelize-cli": "^3.0.0",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.6.2",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "winston": "^2.3.1"

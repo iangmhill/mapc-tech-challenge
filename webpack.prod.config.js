@@ -38,11 +38,20 @@ module.exports = {
         fallback: 'style-loader',
         use: [
           'css-loader',
-          'postcss-loader',
           'sass-loader',
         ],
       }),
       exclude: /node_modules/,
+    }, {
+      test: /\.(png|jpg|gif)$/,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+          },
+        },
+      ],
     }],
   },
 };

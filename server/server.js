@@ -18,6 +18,9 @@ const server = http.Server(app);
 
 // Middleware ------------------------------------------------------------------
 app.use(morgan('dev'));
+app.use('/static', express.static(path.join(__dirname, '..', 'static'), {
+  maxAge: 3600000,
+}));
 if (process.env.NODE_ENV === 'development') {
   // Compile webpack as necessary in development
   const config = require('./../webpack.dev.config');

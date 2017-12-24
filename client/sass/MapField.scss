@@ -1,0 +1,32 @@
+@import './constants.scss';
+
+.mapfield-component {
+  position: relative;
+  width: 100%;
+  & > * {
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+  .mapfield-address-input, .mapfield-address-autocomplete-container,
+      .mapfield-map-container {
+    border-radius: $field-border-radius;
+    border: $field-border-width solid $color-gray-dark;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .mapfield-address-input {
+    padding: 0.5em;
+  }
+  .mapfield-address-autocomplete-container {
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+  }
+  .mapfield-map-container {
+    height: 30em;
+    overflow: hidden;
+    position: relative;
+  }
+}
