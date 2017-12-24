@@ -11,6 +11,9 @@ import render from './../utils/render';
 
 const router = express.Router();
 
+/**
+ * Render the main voting form page.
+ */
 router.get('/', (req, res) => {
   const store = configureStore({}, createMemoryHistory());
   return res
@@ -20,6 +23,10 @@ router.get('/', (req, res) => {
       .send(render(store.getState()));
 });
 
+/**
+ * Fetch all voter information, load it into the initial state, and render the
+ * results page.
+ */
 router.get('/results', (req, res) => {
   const store = configureStore({}, createMemoryHistory());
   models.Voter.findAll({

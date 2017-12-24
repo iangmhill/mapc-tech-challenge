@@ -9,6 +9,9 @@ import {
 
 const geocoder = new window.google.maps.Geocoder();
 
+/**
+ * Update street address on voting form.
+ */
 export function votingFormAddressChange(address) {
   return {
     type: VOTING_FORM_ADDRESS_CHANGE,
@@ -16,12 +19,16 @@ export function votingFormAddressChange(address) {
   };
 }
 
+/**
+ * Update voter lat,lng location and reverse geocode to address if necessary.
+ */
 export function votingFormLocationChange(location, geocodeAddress) {
   return (dispatch) => {
     dispatch({
       type: VOTING_FORM_LOCATION_CHANGE,
       location,
     });
+    // If location was selected from the map, reverse geocode to find address
     if (geocodeAddress) {
       geocoder.geocode({ latLng: location }, (results, status) => {
         if (status === window.google.maps.GeocoderStatus.OK) {
@@ -35,6 +42,9 @@ export function votingFormLocationChange(location, geocodeAddress) {
   };
 }
 
+/**
+ * Geocode to lat,lng after selecting or typing and street address.
+ */
 export function votingFormAddressBlur() {
   return (dispatch, getState) => {
     const address = getState().votingForm.address;
@@ -52,6 +62,9 @@ export function votingFormAddressBlur() {
   };
 }
 
+/**
+ * Update boolean for whether the voter supports the candidate.
+ */
 export function votingFormSupportsCandidateChange(supportsCandidate) {
   return {
     type: VOTING_FORM_SUPPORTS_CANDIDATE_CHANGE,
@@ -59,12 +72,18 @@ export function votingFormSupportsCandidateChange(supportsCandidate) {
   };
 }
 
+/**
+ * Reset the voting form.
+ */
 export function votingFormReset() {
   return {
     type: VOTING_FORM_RESET,
   };
 }
 
+/**
+ * Submit the voting form through the API and reset the form if successful.
+ */
 export function votingFormSubmit() {
   return (dispatch, getState) => {
     const vote = getState().votingForm;

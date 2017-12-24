@@ -5,6 +5,9 @@ import constants from './../constants';
 
 import './../../sass/BooleanField.scss';
 
+/**
+ * A form field for taking input when there are exactly two options.
+ */
 class BooleanField extends React.Component {
   constructor(props) {
     super(props);

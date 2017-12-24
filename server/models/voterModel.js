@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
     },
   }, {
-    // define the table's name
+    // Define the table's name
     tableName: 'voters',
   });
 
