@@ -36,7 +36,6 @@ class ResultsMap extends React.Component {
           google={window.google}
           initialCenter={constants.MAP_FIELD.MAP.INITIAL_CENTER}
           zoom={constants.MAP_FIELD.MAP.INITIAL_ZOOM}
-          onClick={this.props.onMapClick}
         >
           {markers}
         </Map>
@@ -46,6 +45,7 @@ class ResultsMap extends React.Component {
 }
 
 ResultsMap.propTypes = {
+  voters: PropTypes.array,
 }
 
 export default ResultsMap;

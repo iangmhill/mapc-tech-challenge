@@ -4,8 +4,12 @@ import models from './../models';
 
 const router = express.Router();
 
+/**
+ * API endpoint for POSTing a new voter response.
+ */
 router.post('/', (req, res) => {
   const voterData = req.body;
+  // Return false if any data is missing
   if (!voterData.address || !voterData.location || !voterData.location.lng ||
       !voterData.location.lat ||
       typeof (voterData.supportsCandidate) === 'undefined') {
@@ -16,8 +20,8 @@ router.post('/', (req, res) => {
     type: 'Point',
     coordinates: [voterData.location.lng, voterData.location.lat],
   };
-  // Store the JSON point as well to prevent reformatting for all data points
-  // on each load of the results page
+  // Add voter to the database and store the JSON point as well to avoid
+  // reformatting for all data points on each load of the results page
   return models.Voter.create({
     address: voterData.address,
     point,
@@ -31,6 +35,10 @@ router.post('/', (req, res) => {
   });
 });
 
+/**
+ * API endpoint for fetching all voter responses. Limits fields returned to only
+ * those necessary for plotting the data.
+ */
 router.get('/', (req, res) =>
   models.Voter.findAll({
     attributes: ['address', 'jsonPoint', 'supportsCandidate'],

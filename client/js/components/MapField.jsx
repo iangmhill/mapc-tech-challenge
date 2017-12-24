@@ -13,6 +13,9 @@ import constants from './../constants';
 
 import './../../sass/MapField.scss';
 
+/**
+ * A form field for collecting an address and coordinates by text or map.
+ */
 class MapField extends React.Component {
   constructor(props) {
     super(props);

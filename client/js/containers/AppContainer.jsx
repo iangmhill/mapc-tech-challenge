@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    // Fetch the voter results when loading the results page
     onResultsEnter: () => dispatch(resultsFetch()),
   };
 };

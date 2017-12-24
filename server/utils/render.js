@@ -1,12 +1,15 @@
-const styleSheet = `
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="/build/style.css"
-  >
-`;
-
+/**
+ * Render the page and encode the initial state. The separate stylesheet is
+ * unnecessary in development.
+ */
 export default function (initialState) {
+  const styleSheet = `
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/build/style.css"
+    >
+  `;
   return `
     <!DOCTYPE html>
     <html lang="en">

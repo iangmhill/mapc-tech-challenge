@@ -46,6 +46,7 @@ class VotingForm extends React.Component {
 VotingForm.propTypes = {
   address: PropTypes.string,
   location: PropTypes.object,
+  supportsCandidate: PropTypes.bool,
   onAddressBlur: PropTypes.func,
   onAddressChange: PropTypes.func,
   onMapClick: PropTypes.func,

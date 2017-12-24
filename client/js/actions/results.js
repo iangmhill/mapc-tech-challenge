@@ -2,6 +2,9 @@ import {
   RESULTS_LOAD,
 } from './types';
 
+/**
+ * Load voter information into client state.
+ */
 export function resultsLoad(voters) {
   return {
     type: RESULTS_LOAD,
@@ -9,6 +12,9 @@ export function resultsLoad(voters) {
   };
 }
 
+/**
+ * Fetch voter information when opening the results tab.
+ */
 export function resultsFetch() {
   return dispatch =>
     fetch('/api/voter')
@@ -17,5 +23,5 @@ export function resultsFetch() {
       if (!response.success) { throw new Error('Fetch failure'); }
       dispatch(resultsLoad(response.voters));
     });
-    // TODO: Tell the user that an error has occured
+    // TODO: Tell the user if an error has occured
 }
