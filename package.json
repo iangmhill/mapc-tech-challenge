@@ -3,10 +3,6 @@
   "version": "0.0.1",
   "description": "A mini web application for collecting and exploring voter geographic and polling data.",
   "main": "index.js",
-  "engines": {
-    "node": "8.1.4",
-    "npm": "5.3.0"
-  },
   "scripts": {
     "build": "webpack -p --config ./webpack.prod.config.js --progress",
     "dev": "BABEL_DISABLE_CACHE=1 NODE_ENV=development DEBUG=warn nodemon index.js",
